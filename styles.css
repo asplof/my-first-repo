@@ -70,6 +70,12 @@ body {
   align-items: center;
   gap: 10px;
 }
+.action-icon {
+  width: 30px; /* Adjust width if needed */
+  height: 30px; /* Adjust height if needed */
+  border-radius: 50%; /* If you want circular icons */
+  object-fit: cover; /* Ensure the image fits within its container */
+}
 
 .sell-btn {
   background-color: #ff5757;
@@ -213,6 +219,7 @@ body {
 }
 
 /* Department Page */
+/* Department Header */
 .department-header {
   display: flex;
   align-items: center;
@@ -225,14 +232,16 @@ body {
 }
 
 .image {
-  width: 150px;
+  width: 150px; /* Same size as the gray box */
   height: 100px;
-  background-color: #ddd;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 8px;
-  font-weight: bold;
+  border-radius: 8px; /* Maintain rounded corners */
+  overflow: hidden; /* Ensure the image stays within the box */
+}
+
+.image img {
+  width: 100%; /* Ensure the image fits within the box */
+  height: 100%;
+  object-fit: cover; /* Preserve aspect ratio, crop if necessary */
 }
 
 .department-title {
@@ -240,6 +249,7 @@ body {
   font-weight: bold;
   color: #ff5757;
 }
+
 
 .filter-and-listings {
   display: flex;
@@ -405,4 +415,284 @@ body {
 .overlay.show {
   opacity: 1;
   visibility: visible;
+}
+/* Dropdown Filter Styles */
+.filter-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.filter-btn {
+  background-color: #ddd;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+  text-align: left;
+}
+
+.dropdown-content {
+  display: none;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-top: 5px;
+  padding: 10px;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-content label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.dropdown-content label input {
+  margin-right: 10px;
+}
+
+.manual-price-range {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.price-input {
+  width: 60%; /* Larger typing bars */
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem; /* Larger font size for better legibility */
+}
+
+.manual-price-range span {
+  margin: 0 5px;
+  font-size: 1rem;
+}
+
+.apply-btn {
+  padding: 10px 20px;
+  margin-left: 10px;
+  background-color: #a57e25; /* Gold button */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.video-section iframe {
+  display: block;
+  margin: 20px auto;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+.list-yourself {
+  text-align: left;
+  margin: 20px 0;
+}
+.upload-box {
+  background-color: #eaf9f4;
+  border: 2px dashed #008f68;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  font-size: 1rem;
+  color: #008f68;
+}
+.upload-btn {
+  background-color: #008f68;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.upload-btn:hover {
+  background-color: #007255;
+}
+.sell-carousell {
+  margin: 20px 0;
+}
+.sell-carousell h2 {
+  display: flex;
+  align-items: center;
+}
+.sell-carousell .beta {
+  background-color: #ff5757;
+  color: white;
+  font-size: 0.8rem;
+  padding: 2px 5px;
+  margin-left: 10px;
+  border-radius: 4px;
+}
+.carousell-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+.carousell-options li {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: calc(50% - 20px);
+}
+.carousell-options img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  border-radius: 4px;
+}
+.video-section {
+  margin-bottom: 40px; /* Add more space below the video */
+}
+
+.sell-options {
+  margin-top: 40px; /* Push listing info down */
+}
+
+.list-yourself, .sell-carousell {
+  margin-bottom: 20px; /* Ensure spacing between sections */
+}
+
+.upload-box {
+  background-color: #eaf9f4;
+  border: 2px dashed #008f68;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+
+.carousell-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #f9f9f9;
+  overflow-x: hidden;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: white;
+  border-bottom: 1px solid #ddd;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.header .logo img {
+  height: 40px;
+}
+
+.search-bar {
+  display: flex;
+  flex: 1;
+  max-width: 500px;
+  margin: 0 20px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.search-bar button {
+  border: none;
+  background: none;
+}
+
+.search-icon {
+  height: 30px;
+}
+
+.actions .icon {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.content {
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.carousel-section {
+  position: relative;
+  text-align: center;
+}
+
+.carousel img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.carousel-control.prev {
+  left: 10px;
+}
+
+.carousel-control.next {
+  right: 10px;
+}
+
+.item-details h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }

@@ -18,49 +18,112 @@
       </button>
     </div>
     <div class="actions">
-      <button class="sell-btn">Sell</button>
-      <button class="chat-btn">💬</button>
-      <div class="profile-icon">⚪</div>
+      <a href="sell.html">
+        <button class="sell-btn">Sell</button>
+      </a>
+      
+      <button class="chat-btn">
+        <img src="chat.jpg" alt="Chat Icon" class="action-icon">
+      </button>
+      <div class="profile-icon">
+        <img src="profile.png" alt="Profile Icon" class="action-icon">
     </div>
   </header>
 
   <main class="content">
     <section class="department-header">
-      <div class="image">image</div>
+      <div class="image">
+        <img src="vary.png" alt="Department Image">
+      </div>
       <div class="department-title">Department</div>
     </section>
 
     <section class="filter-and-listings">
       <div class="filters">
-        <button class="filter-btn">Brands</button>
-        <button class="filter-btn">Condition</button>
-        <button class="filter-btn">Price range</button>
-        <button class="filter-btn">Item type</button>
+        <!-- Filter: Condition -->
+        <div class="filter-group">
+          <button class="filter-btn" onclick="toggleDropdown('conditionDropdown')">Condition</button>
+          <div class="dropdown-content" id="conditionDropdown">
+            <label><input type="checkbox"> Brand new</label>
+            <label><input type="checkbox"> Like new</label>
+            <label><input type="checkbox"> Lightly used</label>
+            <label><input type="checkbox"> Heavily used</label>
+            <label><input type="checkbox"> Broken</label>
+          </div>
+        </div>
+
+        <!-- Filter: Price Range -->
+        <div class="filter-group">
+          <button class="filter-btn" onclick="toggleDropdown('priceDropdown')">Price Range</button>
+          <div class="dropdown-content" id="priceDropdown">
+            <label><input type="checkbox"> Free</label>
+            <label><input type="checkbox"> $0 - $10</label>
+            <label><input type="checkbox"> $10 - $25</label>
+            <label><input type="checkbox"> $25 - $50</label>
+            <label><input type="checkbox"> $50 - $75</label>
+            <label><input type="checkbox"> $75 - $100</label>
+            <div class="manual-price-range">
+              <input type="text" placeholder="Min" class="price-input">
+              <span> - </span>
+              <input type="text" placeholder="Max" class="price-input">
+              <button class="apply-btn">Apply</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filter: Brands -->
+        <div class="filter-group">
+          <button class="filter-btn" onclick="toggleDropdown('brandsDropdown')">Brands</button>
+          <div class="dropdown-content" id="brandsDropdown">
+            <label><input type="checkbox"> Brand 1</label>
+            <label><input type="checkbox"> Brand 2</label>
+            <label><input type="checkbox"> Brand 3</label>
+          </div>
+        </div>
+
+        <!-- Filter: Item Type -->
+        <div class="filter-group">
+          <button class="filter-btn" onclick="toggleDropdown('itemTypeDropdown')">Item Type</button>
+          <div class="dropdown-content" id="itemTypeDropdown">
+            <label><input type="checkbox"> Type 1</label>
+            <label><input type="checkbox"> Type 2</label>
+            <label><input type="checkbox"> Type 3</label>
+          </div>
+        </div>
       </div>
+
+      <!-- Listings -->
       <div class="listings">
-        <!-- Listing Boxes -->
-        <div class="listing">listing</div>
-        <div class="listing">listing</div>
-        <div class="listing">listing</div>
-        <div class="listing">listing</div>
-        <div class="listing">listing</div>
-        <div class="listing">listing</div>
-        <div class="listing">listing</div>
-        <div class="listing">listing</div>
-        <div class="listing">listing</div>
-        <div class="listing">listing</div>
-        <div class="listing">listing</div>
-        <div class="listing">listing</div>
-        <div class="listing">listing</div>
-        <div class="listing">listing</div>
-        <div class="listing">listing</div>
-        <div class="listing">listing</div>
-        <div class="listing">listing</div>
-        <div class="listing">listing</div>
-        <div class="listing">listing</div>
-        <div class="listing">listing</div>
+        <a href="listing.html" class="listing">listing</a>
+        <a href="listing.html" class="listing">listing</a>
+        <a href="listing.html" class="listing">listing</a>
+        <a href="listing.html" class="listing">listing</a>
+        <a href="listing.html" class="listing">listing</a>
+        <a href="listing.html" class="listing">listing</a>
+        <a href="listing.html" class="listing">listing</a>
+        <a href="listing.html" class="listing">listing</a>
+        <a href="listing.html" class="listing">listing</a>
+        <a href="listing.html" class="listing">listing</a>
+        <a href="listing.html" class="listing">listing</a>
+        <a href="listing.html" class="listing">listing</a>
+        <a href="listing.html" class="listing">listing</a>
+        <a href="listing.html" class="listing">listing</a>
+        <a href="listing.html" class="listing">listing</a>
+        <a href="listing.html" class="listing">listing</a>
+        <a href="listing.html" class="listing">listing</a>
+        <a href="listing.html" class="listing">listing</a>
+        <a href="listing.html" class="listing">listing</a>
+        <a href="listing.html" class="listing">listing</a>
+
       </div>
     </section>
   </main>
+
+  <script>
+    function toggleDropdown(id) {
+      const dropdown = document.getElementById(id);
+      dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
 </body>
 </html>
