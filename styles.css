@@ -85,6 +85,24 @@ body {
   border-radius: 4px;
   cursor: pointer;
 }
+/* Profile Icon */
+.profile-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; /* Set appropriate size */
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden; /* Ensures the image stays circular */
+  background-color: #f5f5f5; /* Optional: background for placeholder */
+}
+
+.profile-icon img {
+  width: 100%; /* Make the image fit the container */
+  height: 100%;
+  object-fit: cover; /* Ensures the image scales properly */
+  border-radius: 50%;
+}
 
 /* Main Content */
 .content {
@@ -398,24 +416,40 @@ body {
   left: 10px; /* Adjust position for the right sidebar */
 }
 
-/* Overlay */
+/* Overlay for background dimming */
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1500;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  background: rgba(0, 0, 0, 0.3); /* Dim the background slightly */
+  z-index: 500; /* Below dropdown but above the rest */
+  display: none; /* Hidden by default */
 }
 
 .overlay.show {
-  opacity: 1;
-  visibility: visible;
+  display: block; /* Only shown when toggled */
 }
+
+/* Dropdown Specific Fixes */
+.profile-dropdown {
+  position: absolute;
+  top: 60px; /* Adjust based on your header height */
+  right: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  display: none; /* Hidden by default */
+  z-index: 1000; /* Ensure above overlay */
+}
+
+.profile-dropdown.show {
+  display: block;
+}
+
+
 /* Dropdown Filter Styles */
 .filter-group {
   margin-bottom: 20px;
@@ -480,107 +514,73 @@ body {
 .apply-btn {
   padding: 10px 20px;
   margin-left: 10px;
-  background-color: #a57e25; /* Gold button */
+  background-color: #ff5757; 
   color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
 }
-.video-section iframe {
-  display: block;
-  margin: 20px auto;
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
+/* Video Section */
+.video-section {
+  margin-bottom: 20px;
 }
-.list-yourself {
-  text-align: left;
-  margin: 20px 0;
-}
-.upload-box {
-  background-color: #eaf9f4;
-  border: 2px dashed #008f68;
-  border-radius: 8px;
-  padding: 20px;
-  text-align: center;
-  font-size: 1rem;
-  color: #008f68;
-}
-.upload-btn {
-  background-color: #008f68;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  font-size: 1rem;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-bottom: 10px;
-}
-.upload-btn:hover {
-  background-color: #007255;
-}
-.sell-carousell {
-  margin: 20px 0;
-}
-.sell-carousell h2 {
+
+/* Sell Options Section */
+.sell-options {
   display: flex;
-  align-items: center;
+  justify-content: space-between;
+  gap: 30px; /* Increased spacing between sections */
+  margin-top: 20px;
 }
-.sell-carousell .beta {
-  background-color: #ff5757;
-  color: white;
-  font-size: 0.8rem;
-  padding: 2px 5px;
-  margin-left: 10px;
-  border-radius: 4px;
-}
-.carousell-options {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  list-style: none;
-  padding: 0;
-}
-.carousell-options li {
-  display: flex;
-  align-items: center;
-  background-color: #fff;
-  padding: 10px;
+
+.list-it-yourself, .sell-to-carousell {
+  flex: 1;
+  background: #f9f9f9;
+  padding: 30px; /* Add padding for better spacing */
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: calc(50% - 20px);
-}
-.carousell-options img {
-  width: 50px;
-  height: 50px;
-  margin-right: 10px;
-  border-radius: 4px;
-}
-.video-section {
-  margin-bottom: 40px; /* Add more space below the video */
+  width: 100%; /* Ensure they stretch to fill space */
 }
 
-.sell-options {
-  margin-top: 40px; /* Push listing info down */
-}
-
-.list-yourself, .sell-carousell {
-  margin-bottom: 20px; /* Ensure spacing between sections */
-}
-
+/* Make the upload box and content larger */
 .upload-box {
-  background-color: #eaf9f4;
-  border: 2px dashed #008f68;
+  background: #eaf7f7;
+  border: 2px dashed #c1e4e4;
+  padding: 30px;
+  text-align: center;
   border-radius: 8px;
-  padding: 20px;
+  width: 100%;
+}
+
+/* Update the carousell options */
+.carousell-options {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.carousell-options .option {
+  flex: 1; /* Ensure each item has equal space */
   text-align: center;
 }
 
-.carousell-options {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+.carousell-options .option img {
+  max-width: 80px; /* Slightly larger images */
+  margin-bottom: 10px;
 }
+
+.carousell-options .option p {
+  font-size: 1rem;
+  color: #333;
+}
+
+
+.beta-tag {
+  color: #ff5757;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
 /* General Reset */
 * {
   margin: 0;
@@ -695,4 +695,134 @@ body {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+/* Profile Dropdown */
+.profile-dropdown {
+  position: absolute;
+  top: 60px; /* Adjust based on header height */
+  right: 20px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 200px; /* Adjust the width as needed */
+  display: none;
+  z-index: 1000;
+}
+
+.profile-dropdown.show {
+  display: block;
+}
+
+.profile-dropdown h3 {
+  margin: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.profile-dropdown .filter-btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background: white;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #333;
+}
+
+.profile-dropdown .filter-btn:hover {
+  background: #f5f5f5;
+  color: red; /* Change color on hover */
+}
+
+/* Sell Button Styling */
+.sell-btn {
+  display: inline-block;
+  background-color: #ff5757;
+  color: white;
+  text-decoration: none; /* Remove underline for links */
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.sell-btn:hover {
+  background-color: #e14e4e; /* Slightly darker red on hover */
+}
+/*Category Dropdown Filter Styles */
+.filter-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.filter-btn {
+  background-color: #ddd;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+  text-align: left;
+}
+
+.dropdown-content {
+  display: none;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-top: 5px;
+  padding: 10px;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-content label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.dropdown-content label input {
+  margin-right: 10px;
+}
+
+.manual-price-range {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.price-input {
+  width: 60%; /* Larger typing bars */
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem; /* Larger font size for better legibility */
+}
+
+.manual-price-range span {
+  margin: 0 5px;
+  font-size: 1rem;
+}
+
+.apply-btn {
+  padding: 10px 20px;
+  margin-left: 10px;
+  background-color: #ff5757; /* Gold button */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
 }

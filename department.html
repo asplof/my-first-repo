@@ -18,16 +18,27 @@
       </button>
     </div>
     <div class="actions">
-      <a href="sell.html">
-        <button class="sell-btn">Sell</button>
+      <a href="sell.html" class="sell-btn">Sell</a>
+      <a href="chat.html" class="chat-btn">
+        <img src="chat.jpg" alt="Chat" class="icon">
       </a>
-      
-      <button class="chat-btn">
-        <img src="chat.jpg" alt="Chat Icon" class="action-icon">
-      </button>
       <div class="profile-icon">
-        <img src="profile.png" alt="Profile Icon" class="action-icon">
-    </div>
+        <img src="profile.png" alt="Profile Icon" />
+      </div>
+      <div class="profile-dropdown">
+        <h3>Buying</h3>
+        <button class="filter-btn">Likes</button>
+        <button class="filter-btn">Previous deals</button>
+        <h3>Selling</h3>
+        <button class="filter-btn">Items sold</button>
+        <button class="filter-btn">Insights</button>
+        <h3>Account</h3>
+        <button class="filter-btn">Settings</button>
+        <button class="filter-btn">Help</button>
+        <button class="filter-btn">Logout</button>
+      </div> 
+
+      
   </header>
 
   <main class="content">
@@ -42,7 +53,7 @@
       <div class="filters">
         <!-- Filter: Condition -->
         <div class="filter-group">
-          <button class="filter-btn" onclick="toggleDropdown('conditionDropdown')">Condition</button>
+          <button class="filter-btn" data-dropdown-id="conditionDropdown">Condition</button>
           <div class="dropdown-content" id="conditionDropdown">
             <label><input type="checkbox"> Brand new</label>
             <label><input type="checkbox"> Like new</label>
@@ -54,7 +65,7 @@
 
         <!-- Filter: Price Range -->
         <div class="filter-group">
-          <button class="filter-btn" onclick="toggleDropdown('priceDropdown')">Price Range</button>
+          <button class="filter-btn" data-dropdown-id="priceDropdown">Price Range</button>
           <div class="dropdown-content" id="priceDropdown">
             <label><input type="checkbox"> Free</label>
             <label><input type="checkbox"> $0 - $10</label>
@@ -73,7 +84,7 @@
 
         <!-- Filter: Brands -->
         <div class="filter-group">
-          <button class="filter-btn" onclick="toggleDropdown('brandsDropdown')">Brands</button>
+          <button class="filter-btn" data-dropdown-id="brandsDropdown">Brands</button>
           <div class="dropdown-content" id="brandsDropdown">
             <label><input type="checkbox"> Brand 1</label>
             <label><input type="checkbox"> Brand 2</label>
@@ -83,7 +94,7 @@
 
         <!-- Filter: Item Type -->
         <div class="filter-group">
-          <button class="filter-btn" onclick="toggleDropdown('itemTypeDropdown')">Item Type</button>
+          <button class="filter-btn" data-dropdown-id="itemTypeDropdown">Item Type</button>
           <div class="dropdown-content" id="itemTypeDropdown">
             <label><input type="checkbox"> Type 1</label>
             <label><input type="checkbox"> Type 2</label>
@@ -104,26 +115,10 @@
         <a href="listing.html" class="listing">listing</a>
         <a href="listing.html" class="listing">listing</a>
         <a href="listing.html" class="listing">listing</a>
-        <a href="listing.html" class="listing">listing</a>
-        <a href="listing.html" class="listing">listing</a>
-        <a href="listing.html" class="listing">listing</a>
-        <a href="listing.html" class="listing">listing</a>
-        <a href="listing.html" class="listing">listing</a>
-        <a href="listing.html" class="listing">listing</a>
-        <a href="listing.html" class="listing">listing</a>
-        <a href="listing.html" class="listing">listing</a>
-        <a href="listing.html" class="listing">listing</a>
-        <a href="listing.html" class="listing">listing</a>
-
       </div>
     </section>
   </main>
 
-  <script>
-    function toggleDropdown(id) {
-      const dropdown = document.getElementById(id);
-      dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

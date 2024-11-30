@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +7,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Header Section -->
+  <!-- Header -->
   <header class="header">
     <a href="index.html" class="logo">
       <img src="logo.png" alt="Carousell Logo">
@@ -20,63 +19,84 @@
       </button>
     </div>
     <div class="actions">
-      <a href="sell.html"><button class="sell-btn">Sell</button></a>
+      <button class="sell-btn">Sell</button>
       <button class="chat-btn">
-        <img src="chat.jpg" alt="Chat Icon" class="action-icon">
+        <img src="chat.jpg" alt="Chat Icon" class="icon">
       </button>
       <div class="profile-icon">
-        <img src="profile.png" alt="Profile Icon" class="action-icon">
+        <img src="profile.png" alt="Profile Icon" />
       </div>
+      <div class="profile-dropdown">
+        <h3>Buying</h3>
+        <button class="filter-btn">Likes</button>
+        <button class="filter-btn">Previous deals</button>
+        <h3>Selling</h3>
+        <button class="filter-btn">Items sold</button>
+        <button class="filter-btn">Insights</button>
+        <h3>Account</h3>
+        <button class="filter-btn">Settings</button>
+        <button class="filter-btn">Help</button>
+        <button class="filter-btn">Logout</button>
+      </div> 
     </div>
   </header>
 
   <!-- Main Content -->
   <main class="content">
     <section class="video-section">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/asmk9vfX-ig?si=NBDp2MacbCye6Yny" 
-        title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
-        gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+      <iframe 
+        width="100%" 
+        height="315" 
+        src="https://www.youtube.com/embed/asmk9vfX-ig?si=NBDp2MacbCye6Yny" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen>
       </iframe>
     </section>
 
     <section class="sell-options">
-      <div class="list-yourself">
-        <h2>List it yourself</h2>
+      <div class="list-it-yourself">
+        <h3>List it yourself</h3>
         <p>Find your own buyers</p>
         <div class="upload-box">
-          <button class="upload-btn">Select photos</button>
-          <p>or drag photos here<br>(Up to 10 photos)</p>
+          <div class="upload-content">
+            <button>Select Photos</button>
+            <p>or drag photos here (up to 10 photos)</p>
+          </div>
         </div>
       </div>
-      <div class="sell-carousell">
-        <h2>Sell to Carousell <span class="beta">Beta</span></h2>
+      
+      <div class="sell-to-carousell">
+        <h3>Sell to Carousell <span class="beta-tag">Beta</span></h3>
         <p>No listing needed, sell directly to us</p>
-        <ul class="carousell-options">
-          <li>
+        <div class="carousell-options">
+          <div class="option">
             <img src="mobile.png" alt="Mobile">
-            <p>Mobile<br><span>Doorstep pickup, instant cash out</span></p>
-          </li>
-          <li>
-            <img src="bicycle.png" alt="Bicycle">
-            <p>Decathlon bicycles<br><span>Instant quotes</span></p>
-          </li>
-          <li>
+            <p>Mobile</p>
+          </div>
+          <div class="option">
+            <img src="bicycle.png" alt="Decathlon Bicycle">
+            <p>Decathlon bicycles</p>
+          </div>
+          <div class="option">
             <img src="fashion.png" alt="Fashion">
-            <p>Men's & women's fashion<br><span>Clean out your closet</span></p>
-          </li>
-          <li>
+            <p>Men's & women's fashion</p>
+          </div>
+          <div class="option">
             <img src="car.png" alt="Car">
-            <p>Cars<br><span>Get the best quote in 24h</span></p>
-          </li>
-          <li>
-            <img src="handbag.png" alt="Handbag">
-            <p>Luxury handbags<br><span>Highest offer in the market</span></p>
-          </li>
-        </ul>
+            <p>Cars</p>
+          </div>
+          <div class="option">
+            <img src="handbag.png" alt="Luxury">
+            <p>Luxury handbags</p>
+          </div>
+        </div>
       </div>
     </section>
   </main>
-
   <script src="script.js"></script>
+
 </body>
 </html>
