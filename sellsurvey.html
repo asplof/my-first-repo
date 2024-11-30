@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sell Survey</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="header">
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="Carousell Logo">
+    </a>
+    <div class="search-bar">
+      <input type="text" placeholder="Search for an item">
+      <button class="search-btn">
+        <img src="searchicon.png" alt="Search Icon" class="search-icon">
+      </button>
+    </div>
+    <div class="actions">
+      <a href="sell.html" class="sell-btn">Sell</a>
+      <a href="chat.html" class="chat-btn">
+        <img src="chat.jpg" alt="Chat" class="icon">
+      </a>
+      <div class="profile-icon">
+        <img src="profile.png" alt="Profile Icon" />
+      </div>
+      <div class="profile-dropdown">
+        <h3>Buying</h3>
+        <button class="filter-btn">Likes</button>
+        <button class="filter-btn">Previous deals</button>
+        <h3>Selling</h3>
+        <button class="filter-btn">Items sold</button>
+        <button class="filter-btn">Insights</button>
+        <h3>Account</h3>
+        <button class="filter-btn">Settings</button>
+        <button class="filter-btn" onclick="location.href='survey.html'">Help</button>
+
+        <button class="filter-btn">Logout</button>
+      </div> 
+    </div>
+  </header>
+
+  <!-- Survey Content -->
+  <main class="content">
+    <h1>Sell to Carousell</h1>
+    <div class="survey-container">
+      <form>
+        <!-- Survey Questions -->
+        <div class="survey-question">
+          <label for="question1">1. What are you selling?</label>
+          <select id="question1">
+            <option value="">Select an option</option>
+            <option value="option1">Mobile</option>
+            <option value="option2">Decathalon Bikes</option>
+            <option value="option3">Fashion</option>
+            <option value="option4">Cars</option>
+            <option value="option5">Luxury handbags</option>
+          </select>
+        </div>
+        <div class="survey-question">
+          <label for="question2">2. What brand are you selling?</label>
+          <select id="question2">
+            <option value="">Select an option</option>
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+            <option value="option4">Option 4</option>
+            <option value="option5">Option 5</option>
+          </select>
+        </div>
+        <div class="survey-question">
+          <label for="question3">3. What item type are you selling?</label>
+          <select id="question3">
+            <option value="">Select an option</option>
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+            <option value="option4">Option 4</option>
+            <option value="option5">Option 5</option>
+          </select>
+        </div>
+        <div class="survey-question">
+            <label for="question4">4. What condition is item in?</label>
+            <select id="question4">
+              <option value="">Select an option</option>
+              <option value="option1">Option 1</option>
+              <option value="option2">Option 2</option>
+              <option value="option3">Option 3</option>
+              <option value="option4">Option 4</option>
+              <option value="option5">Option 5</option>
+            </select>
+          </div>
+        <div class="survey-question">
+          <label for="questionx">x.  question x?</label>
+          <select id="questionx">
+            <option value="">Select an option</option>
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+            <option value="option4">Option 4</option>
+            <option value="option5">Option 5</option>
+          </select>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="button" class="submit-btn" onclick="location.href='index.html'">Submit</button>
+
+      </form>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

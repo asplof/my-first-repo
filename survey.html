@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Survey</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="Carousell Logo">
+    </a>
+    <div class="search-bar">
+      <input type="text" placeholder="Search for an item">
+      <button class="search-btn">
+        <img src="searchicon.png" alt="Search Icon" class="search-icon">
+      </button>
+    </div>
+    <div class="actions">
+      <button class="sell-btn">Sell</button>
+      <button class="chat-btn">
+        <img src="chat.jpg" alt="Chat Icon" class="icon">
+      </button>
+      <div class="profile-icon">
+        <img src="profile.png" alt="Profile Icon" />
+      </div>
+      <div class="profile-dropdown">
+        <h3>Buying</h3>
+        <button class="filter-btn">Likes</button>
+        <button class="filter-btn">Previous deals</button>
+        <h3>Selling</h3>
+        <button class="filter-btn">Items sold</button>
+        <button class="filter-btn">Insights</button>
+        <h3>Account</h3>
+        <button class="filter-btn">Settings</button>
+        <button class="filter-btn" onclick="location.href='survey.html'">Help</button>
+        <button class="filter-btn">Logout</button>
+      </div> 
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="content">
+    <h1>Survey</h1>
+    <section class="survey-section">
+      <!-- Questions -->
+      <div class="question">
+        <label for="question1">1. Title of issue?</label>
+        <br>
+        <input type="text" id="question1" placeholder="Your most descriptive sentence of the issue">
+      </div>
+      <div class="question">
+        <label for="question2">2. Which section are you facing most trouble with?</label>
+        <br>
+        <input type="email" id="question2" placeholder="Type here">
+      </div>
+      <div class="question">
+        <label for="question3">3. Full descripton of issue</label>
+        <br>
+        <input type="tel" id="question3" placeholder="be as descriptive of events as possible">
+      </div>
+     
+      <!-- Submit Button -->
+      <button type="button" class="submit-btn" onclick="location.href='index.html'">Submit</button>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

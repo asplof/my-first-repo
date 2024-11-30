@@ -35,7 +35,8 @@
         <button class="filter-btn">Insights</button>
         <h3>Account</h3>
         <button class="filter-btn">Settings</button>
-        <button class="filter-btn">Help</button>
+        <button class="filter-btn" onclick="location.href='survey.html'">Help</button>
+
         <button class="filter-btn">Logout</button>
       </div> 
     </div>
@@ -57,6 +58,7 @@
     </section>
 
     <section class="sell-options">
+      <!-- List it Yourself Section -->
       <div class="list-it-yourself">
         <h3>List it yourself</h3>
         <p>Find your own buyers</p>
@@ -68,35 +70,37 @@
         </div>
       </div>
       
+      <!-- Sell to Carousell Section -->
       <div class="sell-to-carousell">
-        <h3>Sell to Carousell <span class="beta-tag">Beta</span></h3>
-        <p>No listing needed, sell directly to us</p>
-        <div class="carousell-options">
-          <div class="option">
-            <img src="mobile.png" alt="Mobile">
-            <p>Mobile</p>
+        <a href="sellsurvey.html" class="sell-to-carousell-link">
+          <h3>Sell to Carousell <span class="beta-tag">Beta</span></h3>
+          <p>No listing needed, sell directly to us</p>
+          <div class="carousell-options">
+            <div class="option">
+              <img src="mobile.png" alt="Mobile">
+              <p>Mobile</p>
+            </div>
+            <div class="option">
+              <img src="bicycle.png" alt="Decathlon Bicycle">
+              <p>Decathlon bicycles</p>
+            </div>
+            <div class="option">
+              <img src="fashion.png" alt="Fashion">
+              <p>Men's & women's fashion</p>
+            </div>
+            <div class="option">
+              <img src="car.png" alt="Car">
+              <p>Cars</p>
+            </div>
+            <div class="option">
+              <img src="handbag.png" alt="Luxury">
+              <p>Luxury handbags</p>
+            </div>
           </div>
-          <div class="option">
-            <img src="bicycle.png" alt="Decathlon Bicycle">
-            <p>Decathlon bicycles</p>
-          </div>
-          <div class="option">
-            <img src="fashion.png" alt="Fashion">
-            <p>Men's & women's fashion</p>
-          </div>
-          <div class="option">
-            <img src="car.png" alt="Car">
-            <p>Cars</p>
-          </div>
-          <div class="option">
-            <img src="handbag.png" alt="Luxury">
-            <p>Luxury handbags</p>
-          </div>
-        </div>
+        </a>
       </div>
     </section>
   </main>
   <script src="script.js"></script>
-
 </body>
 </html>
