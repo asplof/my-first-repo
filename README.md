@@ -1,65 +1,59 @@
-# Your Project's Name
+# FED ASSG1
 
-One or two paragraphs providing an overview of your project. Tell us about your project.
-
-Essentially, this part is your sales pitch.
+Carousell Website revamp
  
 ## Design Process
  
-Provide us insights about your design process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
-
-In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
-- As a user type, I want to perform an action, so that I can achieve a goal.
-
-This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. 
-These files should themselves either be included as a pdf file in the project itself (in an separate directory)
-Include the Adobe XD wireframe as a folder. You can include the XD share url. 
+Firstly I looked through the Carousell website to see which areas I could improve on.
+The first thing I noticed and wanted to improve on was how cluttered the main menu of the website was.
+Another thing I wanted to improve on was how users filtered the items to find what they want hence i added in the side dropdown filter in department html.
 
 ## Features
+Added Features include:
+category image buttons which reveals category name when hovered over.
+category sidebar which appears when "see all categories" button is clicked.
+Sell to Carousell survey.
+help survey.
+like/remove like on listings.
+see all liked listings page.
+listing filters in department page.
+profile dropdown revealing buttons.
+listings transform to pop up when user hovers over them.
 
-In this section, you should go over the different parts of your project, and describe each in a sentence or so.
  
-### Existing Features
-- Feature 1 - allows users X to achieve Y, by having them fill out Z
-- ...
 
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
 
 ### Features Left to Implement
-- Another feature idea
+proper filtering in departments html
 
 ## Technologies Used
 
-In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
+VS code
+GitHub
+ChatGPT
+Figma
 
-- [JQuery](https://jquery.com)
-    - The project uses **JQuery** to simplify DOM manipulation.
 
 
-## Testing
-
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
-
-1. Contact form:
-    1. Go to the "Contact Us" page
-    2. Try to submit the empty form and verify that an error message about the required fields appears
-    3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-    4. Try to submit the form with all inputs valid and verify that a success message appears.
-
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
-
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
-
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
 
 ## Credits
 
-### Content
-- The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
 
 ### Media
-- The photos used in this site were obtained from ...
-
+Egg, P. (2024). Magnifying glass Computer Icons, Magnifying Glass, glass, circle png [Photograph].
+Iyikon, I. (2024). Vector Chat Icon Clipart PNG Images [Photograph].
+OpenAI. (2024). AI-generated image: [mobile]. Created using DALL·E. Retrieved from (https://chatgpt.com/g/g-pmuQfob8d-image-generator)
+OpenAI. (2024). AI-generated image: [bicycle]. Created using DALL·E. Retrieved from (https://chatgpt.com/g/g-pmuQfob8d-image-generator)
+OpenAI. (2024). AI-generated image: [handbag]. Created using DALL·E. Retrieved from (https://chatgpt.com/g/g-pmuQfob8d-image-generator)
+OpenAI. (2024). AI-generated image: [someone handing someone something]. Created using DALL·E. Retrieved from (https://chatgpt.com/g/g-pmuQfob8d-image-generator)
+OpenAI. (2024). AI-generated image: [learning materials]. Created using DALL·E. Retrieved from (https://chatgpt.com/g/g-pmuQfob8d-image-generator)
+OpenAI. (2024). AI-generated image: [car]. Created using DALL·E. Retrieved from (https://chatgpt.com/g/g-pmuQfob8d-image-generator)
+OpenAI. (2024). AI-generated image: [gaming products]. Created using DALL·E. Retrieved from (https://chatgpt.com/g/g-pmuQfob8d-image-generator)
+OpenAI. (2024). AI-generated image: [electronics]. Created using DALL·E. Retrieved from (https://chatgpt.com/g/g-pmuQfob8d-image-generator)
+OpenAI. (2024). AI-generated image: [lifestyle products]. Created using DALL·E. Retrieved from (https://chatgpt.com/g/g-pmuQfob8d-image-generator)
+OpenAI. (2024). AI-generated image: [all products all categories in one image]. Created using DALL·E. Retrieved from (https://chatgpt.com/g/g-pmuQfob8d-image-generator)
+OpenAI. (2024). AI-generated image: [fashion clothes]. Created using DALL·E. Retrieved from (https://chatgpt.com/g/g-pmuQfob8d-image-generator)
+Wing, P. (2024). Black Circle, Avatar, User, Rim, Black And White , Line, Auto Part, Symbol, Avatar, User, Circle png [Photograph].
 ### Acknowledgements
 
-- I received inspiration for this project from X
+© 2024 Carousell
