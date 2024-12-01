@@ -208,27 +208,191 @@ body {
 
 
 
-/* Listings */
-.listings {
+.listing {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  width: 23%;
+  margin: 10px;
+}
+
+.listing-header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.user-profile {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-details .username {
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.user-details .listing-life {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.listing-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.listing-content {
+  padding: 10px;
+}
+
+.item-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.price {
+  color: red;
+  font-size: 1rem;
+}
+
+.condition {
+  font-size: 0.9rem;
+  color: #666;
+}
+.listing-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Four listings per row */
-  gap: 20px;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  gap: 1rem; /* Space between listings */
+  padding: 1rem;
+}
+.listing-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.like-btn {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.like-btn:hover {
+  color: red;
+}
+.listing-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 .listing {
-  width: 200px; /* Consistent width for listings */
-  height: 250px; /* Consistent height for listings */
+  flex: 1;
+  max-width: 23%;
+  margin-right: 1%;
+  box-sizing: border-box;
+}
+
+.listing:last-child {
+  margin-right: 0;
+}
+
+/* Triple-dot dropdown fixes */
+.more-options {
+  position: relative;
+}
+
+.options-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 5px); /* Position just below the triple-dot button */
+  left: auto;
+  right: 0; /* Align with the right side of the button */
   background-color: #ffffff;
-  border: 1px solid #ddd;
+  border: 1px solid #e0e0e0;
   border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10; /* Ensure it appears above other elements */
+  min-width: 100px; /* Set a reasonable width */
+  padding: 5px 0;
+}
+
+.options-dropdown .option {
+  padding: 10px;
+  font-size: 14px;
+  text-align: left;
+  color: #333333;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.options-dropdown .option:hover {
+  background-color: #fce4ec; /* Light pink background on hover */
+  color: #e91e63; /* Reddish-pink hover text */
+}
+
+.options-dropdown .option:last-child {
+  border-bottom: none; /* Remove border for the last option */
+}
+
+.more-options {
+  position: relative; /* Ensure proper dropdown placement */
+}
+
+.dots-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  position: relative;
+  padding: 5px;
+}
+
+.more-options:hover .options-dropdown {
+  display: block; /* Show dropdown when hovering on the container */
+}
+
+
+.listings {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-  color: #333;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Adds spacing between rows */
+  gap: 10px; /* Adjust gap between items */
+}
+
+.listing {
+  flex: 1 1 calc(25% - 20px); /* Adjust width to 25% of the container with some gap */
+  max-width: calc(25% - 20px); /* Prevent items from growing beyond 4 per row */
+  box-sizing: border-box; /* Includes padding/border in the size calculation */
+}
+
+
+
+/* Ensure grid responsiveness */
+@media (max-width: 768px) {
+  .listings {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .listings {
+    grid-template-columns: 1fr; /* 1 column for very small screens */
+  }
 }
 
 .listing:hover {
@@ -468,6 +632,7 @@ body {
 }
 
 .dropdown-content {
+  position:absolute;
   display: none;
   background-color: white;
   border: 1px solid #ddd;
@@ -479,7 +644,11 @@ body {
   width: 100%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
+.filter-and-listings {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start; /* Align items to the top */
+}
 .dropdown-content label {
   display: flex;
   align-items: center;
@@ -1095,3 +1264,21 @@ button.submit-btn:hover {
   font-size: 1rem;
 }
 
+.reset-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ff5757;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* Ensure the button stays above other elements */
+}
+
+.reset-btn:hover {
+  background-color: #d94545;
+}

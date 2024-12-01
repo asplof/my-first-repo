@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liked Listings</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="Carousell Logo">
+    </a>
+    <div class="actions">
+      <a href="sell.html" class="sell-btn">Sell</a>
+      <a href="chat.html" class="chat-btn">
+        <img src="chat.jpg" alt="Chat Icon" class="icon">
+      </a>
+      <div class="profile-icon">
+        <img src="profile.png" alt="Profile Icon">
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="content">
+    <h1>Liked Listings</h1>
+    <div id="liked-listings-container">
+      <!-- Content dynamically injected by JavaScript -->
+    </div>
+
+    <!-- Reset Likes Button -->
+    <button id="reset-likes-btn" class="reset-btn">Reset Likes</button>
+  </main>
+
+  <script>
+    // JavaScript to handle dynamic display of liked listings and reset functionality
+    document.addEventListener("DOMContentLoaded", () => {
+      const likedListingsContainer = document.getElementById("liked-listings-container");
+      const resetLikesBtn = document.getElementById("reset-likes-btn");
+
+      // Fetch liked listings from local storage
+      let likedListings = JSON.parse(localStorage.getItem("likedListings")) || [];
+
+      // Function to update local storage and UI
+      const updateLikedListings = () => {
+        localStorage.setItem("likedListings", JSON.stringify(likedListings));
+        renderLikedListings();
+      };
+
+      // Function to render liked listings
+      const renderLikedListings = () => {
+        likedListingsContainer.innerHTML = "";
+
+        if (likedListings.length === 0) {
+          likedListingsContainer.innerHTML = `
+            <p class="no-likes-message">Start liking listings, and they will appear here!</p>
+          `;
+        } else {
+          likedListingsContainer.innerHTML = likedListings.map(listing => `
+            <div class="listing">
+              <div class="listing-header">
+                <img src="user.png" alt="User Profile" class="user-profile">
+                <div class="user-details">
+                  <p class="username">${listing.username}</p>
+                  <span class="listing-life">${listing.listingLife}</span>
+                </div>
+              </div>
+              <img src="${listing.image}" alt="Listing Image" class="listing-image">
+              <div class="listing-content">
+                <h3 class="item-name">${listing.itemName}</h3>
+                <p class="price">${listing.price}</p>
+                <p class="condition">${listing.condition}</p>
+              </div>
+              <div class="listing-footer">
+                <button class="unlike-btn" data-id="${listing.id}">♥ Unlike</button>
+              </div>
+            </div>
+          `).join('');
+        }
+      };
+
+      // Reset likes functionality
+      resetLikesBtn.addEventListener("click", () => {
+        likedListings = [];
+        updateLikedListings();
+        alert("All likes have been reset!");
+      });
+
+      // Render the liked listings initially
+      renderLikedListings();
+    });
+  </script>
+</body>
+</html>
