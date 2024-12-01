@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Profile Dropdown Logic
+  
   const profileIcon = document.querySelector(".profile-icon");
   const profileDropdown = document.querySelector(".profile-dropdown");
   const profileOverlay = document.createElement("div");
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
       profileOverlay.classList.toggle("show");
     });
 
-    // Close dropdown and overlay when clicking outside
+    
     document.addEventListener("click", (event) => {
       if (
         !profileIcon.contains(event.target) &&
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // "See All Categories" Sidebar Logic
+  
   const sidebar = document.getElementById("sidebar");
   const openSidebarButton = document.getElementById("openSidebar");
   const closeSidebarButton = document.getElementById("closeSidebar");
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (sidebar && openSidebarButton && closeSidebarButton) {
     openSidebarButton.addEventListener("click", () => {
       sidebar.classList.add("open");
-      profileOverlay.classList.add("show"); // Reuse overlay for dimming
+      profileOverlay.classList.add("show"); 
     });
 
     closeSidebarButton.addEventListener("click", () => {
@@ -41,14 +41,14 @@ document.addEventListener("DOMContentLoaded", () => {
       profileOverlay.classList.remove("show");
     });
 
-    // Close sidebar when clicking outside
+    
     profileOverlay.addEventListener("click", () => {
       sidebar.classList.remove("open");
       profileOverlay.classList.remove("show");
     });
   }
 
-  // Department Page Filter Dropdown Logic
+  
   const filterButtons = document.querySelectorAll(".filter-btn");
 
   filterButtons.forEach((button) => {
@@ -58,28 +58,28 @@ document.addEventListener("DOMContentLoaded", () => {
       const dropdown = document.getElementById(dropdownId);
 
       if (dropdown) {
-        // Toggle only the clicked dropdown
+        
         dropdown.style.display =
           dropdown.style.display === "block" ? "none" : "block";
       }
     });
   });
 
-  // Prevent closing dropdown when interacting with options
+  // Prevent closing dropdown 
   document.querySelectorAll(".dropdown-content").forEach((dropdown) => {
     dropdown.addEventListener("click", (event) => {
       event.stopPropagation(); // Keep the dropdown open
     });
   });
 
-  // Close all dropdowns when clicking outside
+
   document.addEventListener("click", () => {
     document.querySelectorAll(".dropdown-content").forEach((content) => {
       content.style.display = "none";
     });
   });
 
-  // Listing Page Carousel Logic
+  
   const carouselContainer = document.querySelector(".carousel-container");
   if (carouselContainer) {
     const carouselImages = document.querySelectorAll(".carousel-image");
@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 document.addEventListener("DOMContentLoaded", () => {
-  // Like button logic
+  
   const likedItems = JSON.parse(localStorage.getItem("likedItems")) || [];
   const likeButtons = document.querySelectorAll(".like-btn");
 
@@ -124,27 +124,27 @@ document.addEventListener("DOMContentLoaded", () => {
       const listing = button.closest(".listing");
       const listingId = listing.dataset.id;
 
-      // Toggle liked state
+      
       if (likedItems.includes(listingId)) {
         likedItems.splice(likedItems.indexOf(listingId), 1);
-        button.style.color = ""; // Reset to default
+        button.style.color = ""; 
       } else {
         likedItems.push(listingId);
-        button.style.color = "red"; // Highlight liked
+        button.style.color = "red"; 
       }
 
-      // Save liked items to localStorage
+      
       localStorage.setItem("likedItems", JSON.stringify(likedItems));
     });
 
-    // Initialize button state
+    
     const listing = button.closest(".listing");
     if (likedItems.includes(listing.dataset.id)) {
       button.style.color = "red";
     }
   });
 
-  // Triple dot dropdown logic
+  
   const dotsButtons = document.querySelectorAll(".dots-btn");
 
   dotsButtons.forEach((dotsButton) => {
@@ -165,27 +165,27 @@ document.addEventListener("DOMContentLoaded", () => {
   const likedListingsContainer = document.getElementById("liked-listings-container");
   const likeButtons = document.querySelectorAll(".like-btn");
 
-  // Fetch liked listings from local storage
+ 
   let likedListings = JSON.parse(localStorage.getItem("likedListings")) || [];
 
-  // Function to update the likes in localStorage
+  
   const updateLikedListings = () => {
     localStorage.setItem("likedListings", JSON.stringify(likedListings));
   };
 
-  // Function to render liked listings on the likes.html page
+  
   const renderLikedListings = () => {
     if (!likedListingsContainer) return;
 
     likedListingsContainer.innerHTML = "";
 
     if (likedListings.length === 0) {
-      // Show "no liked items" message
+      // Show message
       likedListingsContainer.innerHTML = `
         <p class="no-likes-message">Start liking listings, and they will appear here!</p>
       `;
     } else {
-      // Display liked listings
+      // Display likes
       likedListings.forEach(listing => {
         const listingElement = document.createElement("div");
         listingElement.classList.add("listing");
@@ -213,21 +213,21 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // Function to handle "like" button click
+
   likeButtons.forEach(button => {
     button.addEventListener("click", () => {
       const listingElement = button.closest(".listing");
       const listingId = parseInt(listingElement.dataset.id);
 
-      // Check if the listing is already liked
+      // Check 
       const isLiked = likedListings.some(listing => listing.id === listingId);
 
       if (isLiked) {
-        // Unlike the listing
+        // Unlike 
         likedListings = likedListings.filter(listing => listing.id !== listingId);
         button.textContent = "♡ Like";
       } else {
-        // Like the listing
+        // Like 
         const newListing = {
           id: listingId,
           username: listingElement.querySelector(".username").textContent,
@@ -241,7 +241,7 @@ document.addEventListener("DOMContentLoaded", () => {
         button.textContent = "♥ Liked";
       }
 
-      // Update localStorage
+      
       updateLikedListings();
     });
   });
@@ -257,7 +257,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Render liked listings initially
+    
     renderLikedListings();
   }
 });
